@@ -1,0 +1,23 @@
+
+<div class="login">
+  <div class="card">
+    <div class="card-header">
+      <h1>Survey</h1>
+    </div>
+    <form [formGroup] = "userForm" class="card-form" (ngSubmit)="login()">
+      <label for="username">
+        <input type="text" formControlName="username" 
+        placeholder="Username" [class.is-valid]="isValidField('username')"
+        [class.is-invalid]="!isValidField('username')">
+        <p class="messages" [class.active]="isValidField('username')">
+
+        </p>
+      </label>
+      <label for="password">
+        <input type="password" formControlName="password" placeholder="Password">
+      </label>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
