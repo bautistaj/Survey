@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "survey"
+    }
+  },
+  "defaultProject": "survey",
+  "cli": {
+    "analytics": "36136996-cf80-4593-8e7b-733899dfa06c"
+  }
 }
