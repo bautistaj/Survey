@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'pcbrands',
     loadChildren: () => import('./pc-brand/pc-brand.module').then((m) => m.PcBrandModule),
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   }
 ];
 

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PcBrandFormComponent } from './components/pc-brand-form/pc-brand-form.component';
 import { LayoutComponent } from './../layout/layout.component';
-import { PcBrandComponent } from './components/pc-brand/pc-brand.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { UserComponent } from './components/user/user.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -10,15 +11,15 @@ const routes: Routes = [
     children: [
       {
         path: 'form/:id',
-        component: PcBrandFormComponent,
+        component: UserFormComponent,
       },
       {
         path: 'form',
-        component: PcBrandFormComponent,
+        component: UserFormComponent,
       },
       {
         path: 'page/:page',
-        component: PcBrandComponent,
+        component: UserComponent
       }
     ]
   }
@@ -28,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PcBrandRoutingModule { }
+export class UserRoutingModule { }

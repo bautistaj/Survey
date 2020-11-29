@@ -1,8 +1,9 @@
 import { Pcbrand } from './pcbrand';
 
-export class Form {
+export class Survey {
   id?: number;
   email: string;
   comments: string;
-  brand: Pcbrand;
+  pcBrand: Pcbrand;
+  createdAt: Date;
 }

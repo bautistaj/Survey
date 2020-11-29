@@ -1,1 +1,33 @@
-<p>survey works!</p>
+<div class="wrapper">
+  <div class="card">
+    <div class="card-header">
+      <h3>Surveys</h3>
+      <button type="button" [routerLink]="['/surveys/form']">new survey</button>
+    </div>
+    <table class="table" *ngIf="surveys">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Brand</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let survey of surveys">
+          <td>{{ survey.id }}</td>
+          <td>{{ survey.email }}</td>
+          <td>{{ survey.pcBrand ? survey.pcBrand.name : '' }}</td>
+          <td>{{ survey.createdAt | date: 'dd-MM-yyyy' }}</td>
+          <td class="justify-text">
+            <button class="danger"type="button" (click)="delete(survey.id)">Delete</button>
+            <button class="success"type="button" [routerLink]="['/surveys/form', survey.id]">Detail</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <app-pager *ngIf="surveys" [pager]="pager" [pageName]="pageName"></app-pager>
+  </div>
+</div>

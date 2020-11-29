@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Pcbrand } from 'src/app/core/model/pcbrand';
 import { PcBrandService } from 'src/app/core/services/pc-brand.service';
 
@@ -11,12 +11,17 @@ import { PcBrandService } from 'src/app/core/services/pc-brand.service';
 })
 export class PcBrandFormComponent implements OnInit {
   public pcbrandForm: FormGroup;
+  public pcbrand: Pcbrand = new Pcbrand();
 
-  constructor(private formBuilder: FormBuilder, private pcBrandService: PcBrandService, private router: Router) { 
+  constructor(private formBuilder: FormBuilder,
+              private pcBrandService: PcBrandService,
+              private router: Router,
+              private activateRouter: ActivatedRoute) {
     this.initForm();
   }
 
   ngOnInit(): void {
+    this.loadData();
   }
 
   initForm(): void {
@@ -36,5 +41,20 @@ export class PcBrandFormComponent implements OnInit {
 
   isValidField(field: string): boolean {
     return this.pcbrandForm.get(field).touched && this.pcbrandForm.get(field).valid;
+  }
+
+  async loadData() {
+    this.activateRouter.params.subscribe(async params => {
+      try {
+        const { id } = params;
+
+        if (id) {
+          this.pcbrand = await this.pcBrandService.findById(id) as Pcbrand;
+          this.pcbrandForm.patchValue(this.pcbrand);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    });
   }
 }

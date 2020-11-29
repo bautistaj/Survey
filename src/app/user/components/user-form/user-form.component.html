@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <div class="card">
+    <div class="card-header">
+      <h3>Register user</h3>
+    </div>
+    <form [formGroup] = "userForm" class="card-form" (ngSubmit)="save()">
+      <label for="username">
+        <input type="text" formControlName="username" 
+        placeholder=" Username" [class.is-valid]="isValidField('username')"
+        [class.is-invalid]="!isValidField('username')">
+      </label>
+
+      <label for="email">
+        <input type="email" formControlName="email" 
+        placeholder=" Email" [class.is-valid]="isValidField('email')"
+        [class.is-invalid]="!isValidField('email')">
+      </label>
+
+      <label for="password">
+        <input type="password" formControlName="password" 
+        placeholder=" Password" [class.is-valid]="isValidField('password')"
+        [class.is-invalid]="!isValidField('password')">
+      </label>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>

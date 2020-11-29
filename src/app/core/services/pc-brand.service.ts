@@ -18,4 +18,12 @@ export class PcBrandService {
   create(pcbrand: Pcbrand) {
     return this.http.post(`${this.API}/pcbrands`, pcbrand).toPromise();
   }
+
+  findById(id: number) {
+    return this.http.get(`${this.API}/pcbrands/${id}`).toPromise();
+  }
+
+  findAll() {
+    return this.http.get(`${this.API}/pcbrands`).toPromise();
+  }
 }

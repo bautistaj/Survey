@@ -26,7 +26,6 @@ export class PcBrandComponent implements OnInit {
       this.pager = await this.pcBrandService.index(page);
       this.brands = this.pager.content;
       this.pageName = '/pcbrands/page';
-      console.log(this.pager);
     });
   }
 }

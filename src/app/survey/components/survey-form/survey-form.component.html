@@ -1,1 +1,30 @@
-<p>survey-form works!</p>
+<div class="wrapper">
+  <div class="card">
+    <div class="card-header">
+      <h3>Register survey</h3>
+    </div>
+    <form [formGroup] = "surveyForm" class="card-form" (ngSubmit)="save()">
+      <label for="email">
+        <input type="email" formControlName="email"
+        placeholder=" Email" [class.is-valid]="isValidField('email')"
+        [class.is-invalid]="!isValidField('email')">
+      </label>
+
+      <label for="comments">
+        <textarea type="text" formControlName="comments" 
+        placeholder=" Comments" [class.is-valid]="isValidField('comments')"
+        [class.is-invalid]="!isValidField('comments')">
+        </textarea>
+      </label>
+
+      <label for="pcBrand">
+        <select name="pcBrand" id="pcBrand" formControlName="pcBrand" [compareWith] = "compareValues">
+          <option disabled>Select a brand</option>
+          <option *ngFor="let pcbrand of pcbrands" [ngValue]="pcbrand"> {{ pcbrand.name }} </option>
+        </select>
+      </label>
+      
+      <button type="submit">Save</button>
+    </form>
+  </div>
+</div>

@@ -8,7 +8,7 @@ body
   background-color: #F5F5F5
   font-family: 'Roboto', sans-serif
 
-input
+input, select, textarea
   margin-bottom: 10px
   border-radius: 5px
   border: none
@@ -43,22 +43,31 @@ table
   width: 100%
 
 td, th
-  border: 1px solid #fadade
+  border: 1px solid #fcf4f4
   text-align: left
   padding: 8px
 
 tr:nth-child(even)
-  background-color: #fadade
+  background-color: #fcf4f4
 
 thead
   color: #FA5A70
 
 
+.danger
+  background-color: red
+  color: #FFFFFF
 
+.success
+  background-color: green
+  color: #FFFFFF
+
+.active
+  color: green
+  
 /** Util **/
 .justify-text
   text-align: center
 /** Util **/
-/** MIXING **/
-@mixin box-shadow
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2)
+
+

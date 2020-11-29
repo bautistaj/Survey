@@ -1,7 +1,7 @@
-import { Form } from './form';
+import { Survey } from './survey';
 
 describe('Form', () => {
   it('should create an instance', () => {
-    expect(new Form()).toBeTruthy();
+    expect(new Survey()).toBeTruthy();
   });
 });
