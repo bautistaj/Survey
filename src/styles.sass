@@ -28,3 +28,37 @@ button
   padding: 10px
   color: #FFFFFF
   border: none
+  cursor: pointer
+
+.wrapper
+  margin-right: auto
+  margin-left:  auto
+  max-width: 960px
+  padding-right: 10px
+  padding-left: 10px
+
+/* TABLE */
+table
+  border-collapse: collapse
+  width: 100%
+
+td, th
+  border: 1px solid #fadade
+  text-align: left
+  padding: 8px
+
+tr:nth-child(even)
+  background-color: #fadade
+
+thead
+  color: #FA5A70
+
+
+
+/** Util **/
+.justify-text
+  text-align: center
+/** Util **/
+/** MIXING **/
+@mixin box-shadow
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2)

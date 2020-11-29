@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div class="card">
+    <div class="card-header">
+      <h3>Register brand</h3>
+    </div>
+    <form [formGroup] = "pcbrandForm" class="card-form" (ngSubmit)="save()">
+      <label for="name">
+        <input type="text" formControlName="name" 
+        placeholder="Brand name" [class.is-valid]="isValidField('name')"
+        [class.is-invalid]="!isValidField('name')">
+        <p class="messages" [class.active]="isValidField('name')">
+
+        </p>
+      </label>
+      <button type="submit">Create</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="card">
+    <div class="card-header">
+      <h3>Brands</h3>
+      <button type="button" [routerLink]="['/pcbrands/form']">new brand</button>
+      
+    </div>
+    
+    <table class="table" *ngIf="brands">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let brand of brands">
+          <td>{{ brand.id }}</td>
+          <td>{{ brand.name }}</td>
+          <td class="justify-text"><button>Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <app-pager *ngIf="pager" [pager]="pager" [pageName]="pageName"></app-pager>
+  </div>
+</div>
