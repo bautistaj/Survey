@@ -23,4 +23,8 @@ export class AuthService {
   getToken(): string {
     return sessionStorage.getItem('token');
   }
+
+  closeSession(): void {
+    sessionStorage.clear();
+  }
 }
