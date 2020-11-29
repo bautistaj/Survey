@@ -26,4 +26,8 @@ export class UserService {
   findById(id: number) {
     return this.http.get(`${this.API}/users/${id}`).toPromise();
   }
+
+  deactivate(username: string) {
+    return this.http.put(`${this.API}/users/deactivate/${username}`, null).toPromise();
+  }
 }

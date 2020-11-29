@@ -8,6 +8,7 @@
       <li><a class="nav-item" [routerLink]="['/pcbrands/page/0']" routerLinkActive="active-opt">Brands</a></li>
       <li><a class="nav-item" [routerLink]="['/users/page/0']" routerLinkActive="active-opt">Users</a></li>
       <li><a class="nav-item" [routerLink]="['/surveys/page/0']" routerLinkActive="active-opt">Surveys</a></li>
+      <li><a class="nav-item" (click)="closeSession()" class="btn">Sign out</a></li>
     </ul>
   </div>
 </nav>
