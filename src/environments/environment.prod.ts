@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  API: 'https://bautistaj.herokuapp.com/survey/api/v1'
 };
