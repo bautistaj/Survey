@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API: 'https://bautistaj.herokuapp.com'
+  API: 'http://localhost:80/survey/api/v1'
 };
 
 /*
